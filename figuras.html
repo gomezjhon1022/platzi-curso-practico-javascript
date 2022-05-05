@@ -7,9 +7,60 @@
     <title>Figuras geométricas | Curso Práctico de JavaScript en Platzi</title>
 </head>
 <body>
-    <h1>
-        Figuras geométricas
-    </h1>
+    <header>
+        <h1>
+            Figuras geométricas
+        </h1>
+        <p>Este es el primer taller del curso practico de JavaScript</p>
+    </header>
+    <section>
+        <h2>Calcula el área y perímetro de un cuadrado</h2>
+        <form>
+            <label for="ImputCuadrado">
+                Escribe cuánto mide cada lado de tu cuadrado:
+                <input id="ImputCuadrado" type="number" />
+                <button type="button" onclick="calcularPerimetroCuadrado()">
+                    Calcular el perímetro
+                </button>
+                <button type="button" onclick="calcularAreaCuadrado()">
+                    Calcular el área
+                </button>
+            </label>
+        </form>    
+    </section>
+    <section>
+        <h2>Calcula el área y el perímetro de un triángulo</h2>
+        <form>
+            <label for="ImputTriangulo">
+                Escribe cuánto mide cada lado de tu triángulo:
+                <input id="ImputTriangulo" type="number"/>
+                <button type="button" onclick="calcularPerimetroTriangulo()">
+                        Calcular el perímetro
+                </button>
+                <button type="button" onclick="calcularAreaTriangulo()">
+                        Calcular el área
+                </button>
+
+            </label>
+        </form>
+    </section>
+    <section>
+        <h2>Calcula el área y el perímetro de un círculo</h2>
+        <form>
+            <label for="ImputCirculo">
+                Escribe cuánto mide el radio del círculo:
+                <input id="ImputCirculo" type="number"/>
+                <button type="button" onclick="calcularPerimetroCirculo()">
+                        Calcular el perímetro
+                </button>
+                <button type="button" onclick="calcularAreaCirculo()">
+                        Calcular el área
+                </button>
+
+            </label>
+        </form>
+
+    </section>
 
     <script src="./figuras.js" > </script>
 </body>
