@@ -106,3 +106,31 @@ function calcularPerimetroTriangulo(){
       const area=areaCirculo(value);
       alert(area);
   }
+
+  //funciòn para calcular la altura de un triangulo isoseles
+
+  function alturaTriangulo(){
+      const input1=document.getElementById("ImputTrianguloIsosceles");
+      const lado1=input1.value;
+      const input2=document.getElementById("ImputTrianguloIsosceles2");
+      const lado2=input2.value;
+      const input3=document.getElementById("ImputTrianguloIsosceles3");
+      const lado3=input3.value;
+
+      if (lado1==lado2||lado1==lado3||lado2==lado3) {
+         if (lado1==lado2){
+             const altura=Math.sqrt((lado1*lado1)-((lado3*lado3)/4));
+            alert(altura);
+            } 
+            else { if (lado1==lado3){
+                      const altura=Math.sqrt((lado1*lado1)-((lado2*lado2)/4));
+                      alert(altura);
+                      } else {    const altura=Math.sqrt((lado2*lado2)-((lado1*lado1)/4));
+                               alert(altura);
+                             }
+                  }
+            }
+      else  {
+               alert("No es un triángulo isoseles, revisa los datos de entrada");
+            }
+      }
