@@ -17,21 +17,38 @@ function onClickButtonPriceDiscount(){
     //const precioConDescuento=calcularPrecioConDescuento(priceValue, discountValue);
     //const resultP=document.getElementById("ResultP");
     //resultP.innerText="El precio con descuento son: $"+precioConDescuento;
-    let descuento;
-        switch(couponValue){
-            case coupons[0]:     //Platino
-            descuento=15;
-            break;
-            case coupons[1]:     //Diamante
-            descuento=30;
-            break;
-            case coupons[2]:     //Dorado
-            descuento=45;
-            break;
-                          }
+    //let descuento;
+       //if (!coupons.includes(couponValue)){
+       //   alert("El cupón "+ couponValue+" no es valido");
+       //   } else if(couponValue==="Platino"){
+       //       descuento=15;
+       //   } else if(couponValue==="Diamante"){
+       //     descuento=25;
+       //   } else if(couponValue==="Dorado"){
+       //     descuento=35;
+       // }
+     const isCouponValueValid=function(coupon){
+         return coupon.name===couponValue;
+     }
+     const userCoupon=coupons.find(isCouponValueValid);
+     if (!userCoupon){
+         alert("El cupón "+ couponValue+" no es valido");
+     } else {
+         const descuento=userCoupon.discount;
+         const precioConDescuento=calcularPrecioConDescuento(priceValue, descuento);
+
+         const resultP=document.getElementById("ResultP");
+         resultP.innerText="El precio con descuento es: $ "+precioConDescuento;
+     }
+
+
+
+
+
     const precioConDescuento=calcularPrecioConDescuento(priceValue, descuento);
     const resultP=document.getElementById("ResultP");
     resultP.innerText="El precion con descuento es: $"+ precioConDescuento;
+          
 }
 
 
@@ -43,7 +60,15 @@ function onClickButtonPriceDiscount(){
 //});
 
 const coupons=[
-    "Platino",
-    "Diamante",
-    "Dorado",
+    {
+      name:"Platino",
+      discount:15,
+    },
+    {
+      name:"Diamante",
+      discount:25,
+    },
+    {
+      name:"Dorado",
+      discount:35,}
 ];
